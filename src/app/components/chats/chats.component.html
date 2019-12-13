@@ -1,0 +1,26 @@
+<div class="col-12 mb-5 align-content-center Chat">
+  <div class="row mb-2">
+    <div class="col text-right AlineadoVertical">
+      <h6>User : {{firebase.user.name}} </h6>
+      <img [src]="firebase.user.photo" alt="">
+    </div>
+  </div>
+  <div class="BoxChat">
+    <app-loading *ngIf="loading"></app-loading>
+    <div class="Box" id="chat">
+      <div *ngIf="!loading">
+        <div [ngClass]="{'text-right': firebase.user.uid == chat.uid, 'text-left':firebase.user.uid !== chat.uid}"
+          *ngFor="let chat of firebase.LocalMessages ">
+          <span
+            [ngClass]="{'badge-primary':  firebase.user.uid !== chat.uid, 'badge-success': firebase.user.uid == chat.uid }"
+            class="badge">{{chat.name}}</span>
+          <p>{{chat.message}}</p>
+        </div>
+      </div>
+    </div>
+    <input (keyup.enter)="sendMessage()" [(ngModel)]="message" name="message" type="text" class="form-control">
+  </div>
+  <button (click)="logout()" class="Boton2 mt-2" mat-flat-button color="primary">
+    <i class="fas fa-sign-out-alt"></i>Logout
+  </button>
+</div>

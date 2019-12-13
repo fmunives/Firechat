@@ -1,0 +1,32 @@
+.Box {
+  padding: 10px;
+  height: 300px;
+  overflow-y: scroll;
+  /*  max-width: 500px;
+  width: 100%; */
+}
+
+.BoxChat {
+  border: 1px solid rgb(0, 109, 128);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+img {
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+}
+
+h6 {
+  display: inline-block;
+  padding-right: 3px;
+}
+
+.AlineadoVertical {
+  line-height: 48px;
+}
+
+.Boton2 {
+  width: 100%;
+}
